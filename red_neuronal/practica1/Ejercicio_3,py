@@ -1,0 +1,23 @@
+# Inicializar el mapa de asientos (4 filas x 5 columnas)
+cine = [[0] * 5 for _ in range(4)]
+
+# Imprimir mapa inicial
+print("Mapa de asientos (0=libre, 1=ocupado):")
+for fila in cine:
+    print(fila)
+
+# Pedir asiento
+fila = int(input("\nElige la fila (0-3): "))
+col = int(input("Elige el asiento (0-4): "))
+
+# Marcar como ocupado
+cine[fila][col] = 1
+
+# Mostrar mapa actualizado
+print("\nMapa actualizado:")
+for fila in cine:
+    print(fila)
+
+# Contar libres
+libres = sum(fila.count(0) for fila in cine)
+print(f"\nTotal de asientos libres: {libres}")
